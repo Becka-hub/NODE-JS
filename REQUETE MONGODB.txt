@@ -1,0 +1,54 @@
+FIND ONE:
+
+- const existeUser = await users.findOne({ email: email });
+
+- const { id } = req.params;
+    try {
+        const data = await users.findById({ _id: id });
+        res.status(201).json({ donner: data });
+    } catch (error) {
+        res.status(422).json({ msg: error });
+    }
+
+
+
+
+FIND ALL:
+- try {
+        const data = await users.find();
+        res.status(201).json({ donner: data });
+    } catch (error) {
+        res.status(422).json({ msg: error });
+    }
+
+- try {
+        const data = await users.find({_id:req.prams.id});
+        res.status(201).json({ donner: data });
+    } catch (error) {
+        res.status(422).json({ msg: error });
+    }
+
+
+
+
+
+
+SAVE:
+
+- const user = new users({ nom: nom, prenom: prenom, email: email, age: age, photo: path })
+
+  await user.save();
+  res.status(201).json(user);
+
+
+
+
+
+
+DELETE:
+
+
+
+
+
+UPDATE:
